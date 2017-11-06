@@ -1,0 +1,20 @@
+﻿빌드 시작: 2017-11-06 오후 7:12:17
+     1>2 노드의 "C:\Users\6kmar\Documents\GitHub\Ogre-Pong\ORGE_PONG\ORGE_Test\ORGE_Test.vcxproj" 프로젝트(Build 대상)입니다.
+     1>ClCompile:
+         F:\Visual Studio 2012\VC\bin\CL.exe /c /I"D:\오우거 엔진\OgreSDK_vc11_v1-9-0\include\OIS" /I"D:\오우거 엔진\OgreSDK_vc11_v1-9-0\include\OGRE" /I"D:\오우거 엔진\OgreSDK_vc11_v1-9-0\include\OGRE\Overlay" /I"D:\오우거 엔진\OgreSDK_vc11_v1-9-0\Samples\Common\include" /I"D:\오우거 엔진\OgreSDK_vc11_v1-9-0\boost" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\TutorialApplication.cpp
+         TutorialApplication.cpp
+     1>d:\오우거 엔진\ogresdk_vc11_v1-9-0\include\ogre\ogremath.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+     1>c:\users\6kmar\documents\github\ogre-pong\orge_pong\tutorialapplication.cpp(435): warning C4101: 'e' :참조되지 않은 지역 변수입니다.
+       Link:
+         F:\Visual Studio 2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\6kmar\Documents\GitHub\Ogre-Pong\ORGE_PONG\Debug\ORGE_Test.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\오우거 엔진\OgreSDK_vc11_v1-9-0\lib\Debug" /LIBPATH:"D:\오우거 엔진\OgreSDK_vc11_v1-9-0\boost\lib" OgreMain_d.lib OgreOverlay_d.lib OIS_d.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\6kmar\Documents\GitHub\Ogre-Pong\ORGE_PONG\Debug\ORGE_Test.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\6kmar\Documents\GitHub\Ogre-Pong\ORGE_PONG\Debug\ORGE_Test.lib" /MACHINE:X86 Debug\BaseApplication.obj
+         Debug\TutorialApplication.obj
+         ORGE_Test.vcxproj -> C:\Users\6kmar\Documents\GitHub\Ogre-Pong\ORGE_PONG\Debug\ORGE_Test.exe
+       PostBuildEvent:
+         copy "C:\Users\6kmar\Documents\GitHub\Ogre-Pong\ORGE_PONG\Debug\\ORGE_Test.exe" "D:\오우거 엔진\OgreSDK_vc11_v1-9-0\Bin\Debug"
+         :VCEnd
+                 1개 파일이 복사되었습니다.
+     1>"C:\Users\6kmar\Documents\GitHub\Ogre-Pong\ORGE_PONG\ORGE_Test\ORGE_Test.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:21.80
