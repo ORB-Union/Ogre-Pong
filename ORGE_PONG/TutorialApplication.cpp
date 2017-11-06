@@ -43,6 +43,8 @@ TutorialApplication::~TutorialApplication(void)
 {
 }
 
+
+
 void TutorialApplication::createFrameListener()
 {
 	BaseApplication::createFrameListener();
@@ -72,10 +74,12 @@ void TutorialApplication::createFrameListener()
 Ball::Ball(SceneManager *ball)
 {
 	sceneManagerBall = ball;
-	speed = 150;
+	speed = 250;
 	BallDirection = Vector3(1,0,-1);
 	playerscore = 0;
 	enemyscore = 0;
+
+	mparticleNode = 0;
 
 }
 
@@ -99,6 +103,13 @@ void Ball::addToScene()
 	BallNode->setScale(0.1f, 0.1f, 0.1f);
 	BallNode->attachObject(sphereEnt);
 	BallNode->setPosition(0.0f,0.0f,0.0f);
+
+	ParticleSystem* sunParticle = sceneManagerBall->createParticleSystem("Sun", "Space/Sun");
+	SceneNode* particleNode = sceneManagerBall->getRootSceneNode()->createChildSceneNode("Particle");
+	particleNode->setPosition(0.0f,0.0f,0.0f);
+	particleNode->attachObject(sunParticle);
+
+	mparticleNode = particleNode;
 }
 
 
@@ -107,27 +118,33 @@ void Ball::moveball(Real time)
 	BallNode->translate((BallDirection * (speed * time)));
 	Vector3 position = BallNode->getPosition();
 
+	mparticleNode->translate((BallDirection * (speed * time)));
+
 	if((position.x - 10) <= -200)
 	{
 		enemyscore++;
 		BallNode->setPosition(0,0,0);
+		mparticleNode->setPosition(0,0,0);
 	}
 
 	else if((position.x + 10) >= 200)
 	{
 		playerscore++;
 		BallNode->setPosition(0,0,0);
+		mparticleNode->setPosition(0,0,0);
 	}
 
 	else if((position.z -10) <= -100 && BallDirection.z < 0)
 	{
 		BallNode->setPosition(position.x, position.y , (-100 + 10));
+		//mparticleNode->setPosition(position.x, position.y , (-100 + 10));
 		changeVerticalDirection(); // 공의 방향전환
 	}
 
 	else if((position.z + 10) >= 100 &&BallDirection.z > 0)
 	{
 		BallNode->setPosition(position.x, position.y, (100 - 10));
+		//mparticleNode->setPosition(position.x, position.y , (100 + -10));
 		changeVerticalDirection(); // 공의 방향전환
 	}
 }
@@ -403,8 +420,7 @@ void TutorialApplication::createScene(void)
 	enemycubeNode->setScale(0.05f, 0.1f, 0.4f);
 	enemycubeNode->attachObject(enemycubeEnt);
 
-	mEnemyNode = enemycubeNode;
-
+	mEnemyNode = enemycubeNode;	
 	//Examples/floorspecularDome
 
 }

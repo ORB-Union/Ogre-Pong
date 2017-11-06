@@ -31,7 +31,6 @@ protected:
 	
     virtual void createScene(void);
 	void Collision(void);
-
 	virtual void createFrameListener();
 
 	//움직이기 시전
@@ -54,7 +53,6 @@ protected:
 	SceneNode* mBallNode;
 	Vector3 mDirection; // 플레이어
 	Vector3 eDirection; // 적
-
 	bool pause;
 
 
@@ -85,6 +83,8 @@ public :
 	void HitBar();
 	void changeSpeed(int change);
 	Vector3 getPosition();
+
+	SceneNode* mparticleNode;
 
 
 private :
